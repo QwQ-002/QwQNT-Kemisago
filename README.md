@@ -1,65 +1,41 @@
-# QwQNT Plugin Template
+# LiteLoaderQQNT-Kemisago
 
-本仓库为民间自制的 QwQNT 插件模板。
+本仓库为[这个仓库](https://github.com/Snoopy1866/text-elementalizer)的 QwQNT 移植版，由该仓库所有者委托移植。
 
-## 如果你想...
+具体功能与介绍见上述仓库，本插件功能完全同步，不会有特有功能。
 
-* 在编写插件时使用 `pnpm` / `yarn` 等包管理器；
-* 被 `Webpack` 的打包速度困扰已久
-* 希望使用 `TypeScript` 编写插件脚本
-* 想使用 `ESLint` 纠正代码错误和统一格式
-* 执行一行命令即可完成代码检查、代码打包和输出 `zip` 文件
+上游仓库的Bug如果在当前插件中出现，可能会优先修复。同时鼓励用户，积极反馈Bug。
 
-那么这个模板正好适合你！
+因为存在相当多的同音同调汉字，每次转换都会随机选择一个匹配同音调的汉字，例如：音调 `xī` 对应的汉字就有：`锡`, `烯`, `硒`，
 
-## 使用
+所以每次转换的结果可能会出现部分字不一样的情况。
 
-1. 点击本仓库页面右上角的 `Use this template`，然后选择 `Create a new repository`
-2. 在接下来的页面中填写你的仓库信息后，点击 `Create repository`
-3. 将创建的仓库克隆至本地，然后编辑 [`package.json`](package.json)
-4. （可选）编辑 [TypeScript 配置文件](tsconfig.json)、[Vite 配置文件](electron.vite.config.ts) 和 [ESLint 配置文件](eslint.config.ts)，让项目配置风格更符合你的口味
-5. 运行 `pnpm install` 安装依赖包，你也可以随意安装其他需要的依赖包
-6. 开始编写代码
-7. 执行 `pnpm lint` 检查代码
-8. 执行 `pnpm build` 打包代码并输出 `zip` 文件
-9. 安装体验或是将成果分享给你的朋友吧！
+## 依赖
 
-## 常见问题
+本插件依赖 `QwQNT-RenderEvents` 插件和 `QwQNT-PluginSettings` 插件。
 
-1. 本模板使用`pnpm`而非`npm`，如想使用`npm`，请删除`package.json`中的`packageManager`配置项
-
-### 部分模块打包后功能不正常或不起作用
-
-请遵循 [Rollup 文档](https://rollupjs.org/configuration-options/#external) 将运行不正常的模块添加至 Vite 的 `rollupOptions` 中，然后利用 `vite-plugin-cp` 插件将对应模块复制到 `dist/node_modules` 目录中。
+上述插件见 `QwQ-002` 组织。
 
 ## 鸣谢
-* [Vite](https://vitejs.dev/)
-* [electron-vite](https://electron-vite.org/)
-* [LLOneBot](https://github.com/LLOneBot/LLOneBot)
+
 * QwQNT
+* [pinyin-pro](https://github.com/zh-lx/pinyin-pro)
 
 ## License
 ```
-    MIT License
-
-    QwQNT-PluginTemplate-Vite-pnpm
+    QwQNT-Kemisago
     Copyright (C) 2025  Adpro
 
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```

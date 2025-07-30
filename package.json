@@ -1,8 +1,8 @@
 {
   "$schema": "./plugin.schema.json",
-  "name": "qwqnttemplate-vite-pnpm",
+  "name": "qwqnt-kemisago",
   "version": "1.0.0",
-  "description": "A plugin template for QwQNT, powered by Vite & Typescript",
+  "description": "由 Snoopy1866 开发的 text-elementalizer 的 QwQNT 移植版插件",
   "type": "module",
   "main": "./main/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "build": "electron-vite build"
   },
   "author": "Adpro",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@electron-toolkit/eslint-config-ts": "^3.1.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
@@ -31,10 +31,13 @@
   },
   "packageManager": "pnpm@10.13.1",
   "qwqnt": {
-    "name": "QwQNT 插件模板",
+    "name": "Kemisago",
+    "settings": "Kemisago",
     "inject": {
-      "preload": "./preload/index.cjs",
       "renderer": "./renderer/index.js"
     }
+  },
+  "dependencies": {
+    "@adpro/text-elementalizer-core": "^1.0.1"
   }
 }
