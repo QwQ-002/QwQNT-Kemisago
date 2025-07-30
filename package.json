@@ -32,7 +32,6 @@
   "packageManager": "pnpm@10.13.1",
   "qwqnt": {
     "name": "Kemisago",
-    "settings": "Kemisago",
     "inject": {
       "renderer": "./renderer/index.js"
     }
