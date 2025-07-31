@@ -12,7 +12,7 @@ const barIconClick = async () => {
   if(text){
     const userConfig = await PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
 
-    const result = await convert(text, userConfig.ignoreTones);
+    const result = convert(text, userConfig.ignoreTones);
     navigator.clipboard.writeText(result).then(() => {
       new Notification('Kemisago', {
         icon: `${qwqnt.framework.paths.plugins}\\qwqnt-kemisago\\assets\\barIcon.svg`,
