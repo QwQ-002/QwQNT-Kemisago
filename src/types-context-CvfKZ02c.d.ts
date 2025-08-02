@@ -1,4 +1,15 @@
+declare function storageUrlToPath(url: string): string;
+declare function pathToStorageUrl(path: string, options?: Record<string, string> & {
+    prefix?: string;
+}): string;
+declare const protocolExports: {
+    readonly storageUrlToPath: typeof storageUrlToPath;
+    readonly pathToStorageUrl: typeof pathToStorageUrl;
+};
+type ElectronProtocol = typeof protocolExports;
+
 interface Plugin {
+    namespace: string;
     path: string;
     packageJson: object;
 }
@@ -25,11 +36,12 @@ interface FrameworkExports {
         plugins: string;
         stylesheets: string;
     };
-    plugins: Plugin[];
+    protocol: ElectronProtocol;
+    plugins: Record<string, Plugin>;
 }
 interface ContextGlobal {
     core: CoreExports;
     framework: FrameworkExports;
 }
 
-export type { ContextGlobal as C };
+export type { ContextGlobal as C, Plugin as P };
