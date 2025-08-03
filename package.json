@@ -35,6 +35,10 @@
     "icon": "./assets/icon.svg",
     "inject": {
       "renderer": "./renderer/index.js"
+    },
+    "dependencies": {
+      "qwqnt-plugin_settings": "^1.2.1",
+      "qwqnt-renderer_events": "^1.0.0"
     }
   },
   "dependencies": {
