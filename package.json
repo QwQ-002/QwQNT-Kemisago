@@ -1,7 +1,7 @@
 {
   "$schema": "./plugin.schema.json",
   "name": "qwqnt-kemisago",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "由 Snoopy1866 开发的 text-elementalizer 的 QwQNT 移植版插件",
   "type": "module",
   "main": "./main/index.js",
@@ -37,8 +37,8 @@
       "renderer": "./renderer/index.js"
     },
     "dependencies": {
-      "qwqnt-plugin_settings": "^1.2.1",
-      "qwqnt-renderer_events": "^1.0.0"
+      "qwqnt-renderer_events": "^1.1.0",
+      "qwqnt-plugin_settings": "^1.2.1"
     }
   },
   "dependencies": {
