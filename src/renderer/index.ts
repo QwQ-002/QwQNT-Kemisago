@@ -59,7 +59,7 @@ observeElement('.chat-func-bar', async () => {
 }, true);
 
 RendererEvents.onSettingsWindowCreated(async () => {
-  const view = PluginSettings.renderer.registerPluginSettings(packageJson);
+  const view = await PluginSettings.renderer.registerPluginSettings(packageJson);
   const page = await (await fetch(qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].path}\\pages\\settings.html`))).text();
 
   view.innerHTML = page;
