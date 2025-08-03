@@ -44,14 +44,14 @@ const onMessageLoad = async () => {
   icon.classList.add('Kemisago-q-icon');
   icon.innerHTML = iconSvg;
 
-  document.querySelector('.chat-func-bar')!.lastElementChild!.appendChild(barIcon);
+  document.querySelector('.chat-func-bar')!.firstElementChild!.append(barIcon);
   log('创建工具栏图标完成');
 };
 
 const style = document.createElement('link');
 style.rel = 'stylesheet';
 style.href = qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].path}\\style\\global.css`);
-document.head.appendChild(style);
+document.head.append(style);
 log('加载样式文件完成');
 
 observeElement('.chat-func-bar', async () => {
