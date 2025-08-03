@@ -15,7 +15,7 @@ const barIconClick = async () => {
     const result = convert(text, userConfig.ignoreTones);
     navigator.clipboard.writeText(result).then(async () => {
       new Notification('Kemisago', {
-        icon: qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].path}\\assets\\barIcon.svg`),
+        icon: qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].meta.path}\\assets\\barIcon.svg`),
         body: '转换结果已复制到剪贴版',
         requireInteraction: false,
       });
@@ -24,7 +24,7 @@ const barIconClick = async () => {
 };
 
 const onMessageLoad = async () => {
-  const iconSvg = await (await fetch(qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].path}\\assets\\barIcon.svg`))).text();
+  const iconSvg = await (await fetch(qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].meta.path}\\assets\\barIcon.svg`))).text();
   const qTooltips = document.createElement('div');
   const qTooltipsContent = document.createElement('div');
   const icon = document.createElement('i');
@@ -50,7 +50,7 @@ const onMessageLoad = async () => {
 
 const style = document.createElement('link');
 style.rel = 'stylesheet';
-style.href = qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].path}\\style\\global.css`);
+style.href = qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].meta.path}\\style\\global.css`);
 document.head.append(style);
 log('加载样式文件完成');
 
@@ -60,7 +60,7 @@ observeElement('.chat-func-bar', async () => {
 
 RendererEvents.onSettingsWindowCreated(async () => {
   const view = await PluginSettings.renderer.registerPluginSettings(packageJson);
-  const page = await (await fetch(qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].path}\\pages\\settings.html`))).text();
+  const page = await (await fetch(qwqnt.framework.protocol.pathToStorageUrl(`${qwqnt.framework.plugins[packageJson.name].meta.path}\\pages\\settings.html`))).text();
 
   view.innerHTML = page;
 
