@@ -1,3 +1,4 @@
-# 1.0.0
+# 1.0.1
 
-1. 迁移 LiteLoaderQQNT 插件代码，适配 QwQNT
+1. 使用 storage 协议
+2. 将图标放到左边的工具栏(adproqwq/LiteLoaderQQNT-Kemisago#2)
