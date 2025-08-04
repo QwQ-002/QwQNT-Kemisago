@@ -38,7 +38,7 @@
     },
     "dependencies": {
       "qwqnt-renderer_events": "^1.1.0",
-      "qwqnt-plugin_settings": "^1.2.1"
+      "qwqnt-plugin_settings": "^1.2.2"
     }
   },
   "dependencies": {
