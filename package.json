@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/QwQ-002/types/main/plugin.schema.json",
   "name": "qwqnt-kemisago",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "由 Snoopy1866 开发的 text-elementalizer 的 QwQNT 移植版插件",
   "type": "module",
   "scripts": {
