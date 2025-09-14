@@ -10,7 +10,7 @@ const barIconClick = async () => {
   const text = (document.querySelector('.ck.ck-content.ck-editor__editable p') as HTMLParagraphElement).textContent;
 
   if(text){
-    const userConfig = await PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
+    const userConfig = PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
 
     const result = convert(text, userConfig.ignoreTones);
     navigator.clipboard.writeText(result).then(async () => {
@@ -64,13 +64,13 @@ RendererEvents.onSettingsWindowCreated(async () => {
 
   view.innerHTML = page;
 
-  let userConfig = await PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
+  let userConfig = PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
 
   (view.querySelector('#pluginVersion') as HTMLParagraphElement).innerHTML = packageJson.version;
   if(userConfig.ignoreTones) (view.querySelector('#ignoreTones') as HTMLButtonElement).setAttribute('is-active', '');
 
   (view.querySelector('#ignoreTones') as HTMLButtonElement).addEventListener('click', async () => {
-    let userConfig = await PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
+    let userConfig = PluginSettings.renderer.readConfig<IConfig>(pluginId, config);
     if(userConfig.ignoreTones){
       userConfig.ignoreTones = false;
       (view.querySelector('#ignoreTones') as HTMLButtonElement).removeAttribute('is-active');
@@ -79,10 +79,10 @@ RendererEvents.onSettingsWindowCreated(async () => {
       userConfig.ignoreTones = true;
       (view.querySelector('#ignoreTones') as HTMLButtonElement).setAttribute('is-active', '');
     }
-    await PluginSettings.renderer.writeConfig(pluginId, userConfig);
+    PluginSettings.renderer.writeConfig(pluginId, userConfig);
   });
 
   (view.querySelector('#github') as HTMLButtonElement).addEventListener('click', () => {
-    window.open('https://github.com/QwQ-002/QwQNT-Kemisago');
+    PluginSettings.renderer.openExternal('https://github.com/QwQ-002/QwQNT-Kemisago');
   });
 });

@@ -3,6 +3,6 @@
   "include": ["electron.vite.config.*", "src/**/*.ts", "src/**/*.d.ts"],
   "compilerOptions": {
     "composite": true,
-    "types": ["electron-vite/node"]
+    "types": ["electron-vite/node", "@qwqnt/types/main"]
   }
 }
